@@ -307,13 +307,8 @@ app.get('/',(req,res)=>{
 app.get('/e',(req,res)=>{
     res.send(e.fields);
 })
-app.get('/api/:id/:type',(req,res)=>{
-  const id=req.params.id;
-  const type=req.params.type;
-  const q=req.query.sort;
-  res.send(`id: ${id} , type: ${q}`);
-})
-app.get('/s/:id',(req,res)=>{
+
+app.get('/api/:id',(req,res)=>{
   const id=req.params.id;
   const sci=e.scientists.find(c=>c.short_name===req.params.id.toUpperCase());
   console.log(sci);
@@ -321,10 +316,12 @@ app.get('/s/:id',(req,res)=>{
     res.send(sci);
   }
   else {
-    res.send('Can\'t Find any scientist with this id');
+    res.status(404).send('Can\'t Find any scientist with this id');
   }
 })
-
+app.get('/random',(req,res)=>{
+  res.send(e.scientists[Math.floor(Math.random()*e.scientists.length)]);
+})
 
 app.listen(port, () => {
   // Code.....
