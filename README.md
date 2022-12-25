@@ -1,10 +1,5 @@
-Express.js Template
-This is a simple Express.js template that can be used as a starting point for creating web applications with Node.js and Express.
+This API allows users to retrieve information about scientists by making HTTP requests to the API's endpoints. The API has two endpoints: /random and /api/<shortname>. The /random endpoint returns a random scientist, while the /api/<shortname> endpoint returns information about the specified scientist. Both endpoints return the data in JSON format.
 
-Features
-Provides a basic Express.js setup with routing and middleware support.
-Uses EJS as the template engine.
-Includes a simple test suite using Mocha and Chai.
+To use the API, users can send an HTTP GET request to the appropriate endpoint with the desired parameters. For example, to get a random scientist, the user would send a GET request to the /random endpoint. To get information about a specific scientist, the user would send a GET request to the /api/<shortname> endpoint, replacing <shortname> with the name of the scientist you are interested in.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for more information.
+The API is built using Node.js and the Express.js library.
